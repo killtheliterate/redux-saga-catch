@@ -12,11 +12,10 @@
     "url": "https://github.com/killtheliterate/redux-saga-try-catch/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
-    "lodash": "^4.17.21"
+    "@babel/runtime": "^7.14.6"
   },
   "peerdependencies": {
-    "ramda": "^0.27.1",
+    "lodash": "^4.17.21",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.3"
   },
@@ -36,12 +35,14 @@
     "babel-plugin-macros": "^3.1.0",
     "eslint": "^7.29.0",
     "jest": "^24.9.0",
+    "ramda": "^0.27.1",
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
     "rollup": "^2.26.5",
     "rollup-plugin-typescript2": "^0.30.0",
     "semantic-release": "^17.1.1",
     "ts-jest": "^24.3.0",
+    "typed-redux-saga": "^1.3.1",
     "typescript": "^3.9.3",
     "typescript-tslint-plugin": "^1.0.1"
   },

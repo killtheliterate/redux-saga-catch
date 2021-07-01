@@ -28,9 +28,11 @@ const baseConfig = {
   input: 'src/index.ts',
 
   external: [
-    // 'redux',
-    // 'redux-saga',
-    // 'redux-saga/effects'
+    'lodash',
+    'redux',
+    'redux-saga',
+    'redux-saga/effects',
+    /@babel\/runtime/
   ]
 }
 
