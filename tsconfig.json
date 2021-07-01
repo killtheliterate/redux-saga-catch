@@ -25,10 +25,6 @@
 
     "paths": {
       "@/*": ["src/*"]
-    },
-
-    "plugins": [
-      { "name": "typescript-tslint-plugin"}
-    ]
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { SagaIterator } from 'redux-saga'
 import { call } from 'redux-saga/effects'
-import { isEmpty } from 'ramda'
+import { isEmpty } from 'lodash/fp'
 
 // ---------------------------------------------------------------------------
 
@@ -25,9 +25,8 @@ export type DeferredAction = {
   payload?: any
 }
 
-export type StdOut = { stdout: (...args: string[]) => void }
-
-export type Saga<T, A> = (io: T, action: A) => SagaIterator
+type StdOut = { stdout: (...args: string[]) => void }
+type Saga<T, A> = (io: T, action: A) => SagaIterator
 
 export function isNotEmpty<T> (value: T): value is NonNullable<T> {
   return !isEmpty(value)
@@ -61,9 +60,9 @@ export function deferredAction<T extends StdOut, A> (saga: Saga<T, A>, io: T) {
     }
 
     try {
-      const result = yield call(saga, io, payload as A)
-
-      yield call(deferred.success, result)
+      // const result = yield call(saga, io, payload as A)
+      //
+      // yield call(deferred.success, result)
     } catch (err) {
       yield call(stdout, `${saga.name}`, err)
       yield call(deferred.failure, err)
