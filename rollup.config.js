@@ -1,23 +1,38 @@
-import typescript from 'rollup-plugin-typescript2'
+import { babel } from '@rollup/plugin-babel'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+
+// ---------------------------------------------------------------------------
+
+const extensions = [
+  '.js',
+  '.jsx',
+  '.ts',
+  '.tsx',
+]
 
 const baseConfig = {
   plugins: [
-    typescript({
-      tsconfigOverride: {
-        exclude: [
-          '**/*.test.ts',
-          'node_modules'
-        ]
-      }
+    nodeResolve({ 
+      extensions
+    }),
+
+    commonjs(),
+
+    babel({ 
+      extensions,
+      babelHelpers: 'runtime' 
     })
   ],
 
   input: 'src/index.ts',
 
   external: [
+    'lodash',
     'redux',
     'redux-saga',
-    'redux-saga/effects'
+    'redux-saga/effects',
+    /@babel\/runtime/
   ]
 }
 

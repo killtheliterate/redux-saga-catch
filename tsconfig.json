@@ -9,7 +9,9 @@
     "baseUrl": "./",
     "declaration": true,
     "downlevelIteration": true,
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "module": "esnext",
     "moduleResolution": "node",
     "noUnusedParameters": true,
@@ -25,10 +27,6 @@
 
     "paths": {
       "@/*": ["src/*"]
-    },
-
-    "plugins": [
-      { "name": "typescript-tslint-plugin"}
-    ]
+    }
   }
 }
